@@ -1,0 +1,53 @@
+.app-container {
+  display: flex;
+  flex-direction: column; /* Adjust to column */
+  height: 100vh;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar-container {
+  display: flex; /* Adjust to flex */
+  flex-grow: 1; /* Adjust to grow to take remaining space */
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+}
+
+.sidebar.closed {
+  width: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex-grow: 1; 
+  padding: 20px;
+}
