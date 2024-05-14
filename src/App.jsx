@@ -15,10 +15,7 @@ function App() {
       <Header toggleSidebar={toggleSidebar} />
       <div className="main-content"> 
         <Sidebar isOpen={isSidebarOpen} />
-        <div>
-          <p>Main content goes here...</p>
-          <p>Main content goes here...</p>
-        </div>
+       
       </div>
     </div>
   );
