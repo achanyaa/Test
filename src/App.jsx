@@ -4,6 +4,7 @@ import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SmallButton from './components/Button/SmallButton';
+import RightSideSection from './components/rightSideSection/RightSideSection';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -21,7 +22,7 @@ function App() {
             <Sidebar isOpen={isSidebarOpen} />
           </div>
           <div className='rightside-content'>
-            Right side Content
+            <RightSideSection/>
           </div>
         </div>
         <Routes>
