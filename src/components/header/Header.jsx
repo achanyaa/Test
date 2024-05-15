@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = ({ toggleSidebar }) => {
+const Header = () => {
   return (
-    <header className="header">
-      <button className="menu-btn" onClick={toggleSidebar}>Menu</button>
+    <header className="header"  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+     
       <h1>Custom Material UI Components</h1>
     </header>
   );
