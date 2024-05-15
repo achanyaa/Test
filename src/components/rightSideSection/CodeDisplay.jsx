@@ -5,6 +5,7 @@ const CodeDisplay = ({ code }) => {
     const [showCode, setShowCode] = useState(true);
 
 
+
     const toggleCodeDisplay = () => {
         setShowCode(!showCode);
     };
@@ -14,6 +15,9 @@ const CodeDisplay = ({ code }) => {
             .then(() => alert('Code copied to clipboard!'))
             .catch((error) => console.error('Failed to copy:', error));
     };
+
+    
+
 
     return (
         <div className="code-display-container">
