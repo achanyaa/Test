@@ -1,11 +1,11 @@
 .app-container {
   display: flex;
-  flex-direction: column; /* Adjust to column */
+  flex-direction: column; 
   height: 100vh;
 }
 
 .header {
-  background-color: #333;
+  background-color: black;
   color: white;
   padding: 10px;
   display: flex;
@@ -20,17 +20,22 @@
   color: white;
   cursor: pointer;
 }
+.menu-text{
+font-family: sans-serif;
+}
 
 .sidebar-container {
-  display: flex; /* Adjust to flex */
-  flex-grow: 1; /* Adjust to grow to take remaining space */
+  display: flex; 
+  flex-grow: 1; 
 }
 
 .sidebar {
+  height: 100%;
   width: 200px;
   background-color: #f0f0f0;
   transition: width 0.3s ease;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .sidebar.closed {
