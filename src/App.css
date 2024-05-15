@@ -4,6 +4,11 @@
   height: 100vh;
 }
 
+.wrapper-content {
+  display: flex;
+  flex-grow: 1; 
+}
+
 .header {
   background-color: black;
   color: white;
@@ -20,13 +25,13 @@
   color: white;
   cursor: pointer;
 }
-.menu-text{
-font-family: sans-serif;
+
+.menu-text {
+  font-family: sans-serif;
 }
 
 .sidebar-container {
-  display: flex; 
-  flex-grow: 1; 
+  display: flex;
 }
 
 .sidebar {
@@ -53,6 +58,11 @@ font-family: sans-serif;
 }
 
 .main-content {
-  flex-grow: 1; 
   padding: 20px;
+}
+
+.rightside-content {
+  padding: 20px;
+  flex-grow: 1; 
+  background-color: #eaeaea; 
 }

@@ -6,29 +6,30 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SmallButton from './components/Button/SmallButton';
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); 
-  
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
-    
     <div className="app-container">
-      <Header toggleSidebar={toggleSidebar} />
-      <div className="main-content"> 
-        <Sidebar isOpen={isSidebarOpen} />
-        <div>
-        <Router>
-        <Routes>
-        <Route path="/link1" element={<SmallButton />} />
-          </Routes>
-          </Router>
+      <Router>
+        <Header toggleSidebar={toggleSidebar} />
+        <div className='wrapper-content'>
+          <div className="main-content">
+            <Sidebar isOpen={isSidebarOpen} />
+          </div>
+          <div className='rightside-content'>
+            Right side Content
+          </div>
         </div>
-       
-      </div>
+        <Routes>
+          <Route path="/button" element={<SmallButton />} />
+          {/* Add your other routes here */}
+        </Routes>
+      </Router>
     </div>
-   
   );
 }
 
