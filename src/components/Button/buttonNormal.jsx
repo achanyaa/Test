@@ -1,8 +1,8 @@
 import React from "react";
 import Button from '@mui/material/Button';
-import './SmallButton.css'
+import './buttonNormal.css'
 
-function SmallButton() {
+function ButtonNormal() {
     return (
         
             <div className="button-container">
@@ -13,4 +13,4 @@ function SmallButton() {
     )
 }
 
-export default SmallButton;
+export default ButtonNormal;

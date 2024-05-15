@@ -1,0 +1,17 @@
+/* CodeDisplay.css */
+.code-display-container {
+  position: relative;
+}
+
+.ui-container {
+  /* Add styles for UI display */
+}
+
+.code-container {
+  position: absolute;
+  top: 100%; /* Position below the UI */
+  left: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
