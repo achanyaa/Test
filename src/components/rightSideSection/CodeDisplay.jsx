@@ -1,47 +1,62 @@
 import React, { useState } from 'react';
+import { FaRegCopy, FaCopy } from "react-icons/fa";
 import './Codedisplay.css';
 
-const CodeDisplay = ({ code }) => {
-    const [showCode, setShowCode] = useState(true);
+const CodeDisplay = ({ jsxCode, cssCode }) => {
+    const [activeTab, setActiveTab] = useState('jsx');
+    const [copySuccess, setCopySuccess] = useState(false);
+    const [showTooltip, setShowTooltip] = useState(false);
 
-
-
-    const toggleCodeDisplay = () => {
-        setShowCode(!showCode);
+    const toggleTab = (tab) => {
+        setActiveTab(tab);
     };
 
-    const copyCodeToClipboard = () => {
+    const copyCodeToClipboard = (code) => {
         navigator.clipboard.writeText(code)
-            .then(() => alert('Code copied to clipboard!'))
-            .catch((error) => console.error('Failed to copy:', error));
+            .then(() => {
+                setCopySuccess(true);
+                setTimeout(() => {
+                    setCopySuccess(false);
+                }, 3000); 
+            })
+            .catch(error => {
+                console.error('Failed to copy:', error);
+                setCopySuccess(false);
+            });
+    };
+   
+
+
+    const handleCopyMouseEnter = () => {
+        setShowTooltip(true);
     };
 
-
-
+    const handleCopyMouseLeave = () => {
+        setShowTooltip(false);
+    };
 
     return (
         <div className="code-display-container">
-
             <div className="ui-container">
-
-                <button onClick={toggleCodeDisplay} className="toggle-code-button">
-                    {showCode ? 'Hide Code' : 'Show Code'}
+                <button onClick={() => toggleTab('jsx')} className={activeTab === 'jsx' ? 'active' : ''}>JSX</button>
+                <button onClick={() => toggleTab('css')} className={activeTab === 'css' ? 'active' : ''}>CSS</button>
+                <button
+                    onClick={() => copyCodeToClipboard(activeTab === 'jsx' ? jsxCode : cssCode)}
+                    className="copy-button"
+                    onMouseEnter={handleCopyMouseEnter}
+                    onMouseLeave={handleCopyMouseLeave}
+                >
+                    {copySuccess ? <FaCopy /> : <FaRegCopy />}
                 </button>
+                {showTooltip && <div className="tooltip">Copy</div>}
             </div>
-
-
-
-
-            {showCode && (
-                <div className="code-container">
-                    {showCode && <button onClick={copyCodeToClipboard}>Copy</button>}
-                    <pre>
-                        <code>
-                            {code}
-                        </code>
-                    </pre>
-                </div>
-            )}
+            <div className="code-container">
+                <pre>
+                    <code>
+                        {activeTab === 'jsx' ? jsxCode : cssCode}
+                    </code>
+                </pre>
+            </div>
         </div>
     );
 };

@@ -27,7 +27,7 @@ function ButtonNormal() {
             <div className="button-container">
                 <Button variant="contained">Button</Button>
             </div>
-            <CodeDisplay code={code}/>
+            <CodeDisplay jsxCode={code}/>
         </div>
 
 
