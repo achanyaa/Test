@@ -25,10 +25,7 @@ function App() {
           <RightSideSection/>
         </div>
       </div>
-      <Routes>
-        <Route path="/normalbutton" element={<ButtonNormal />} />
-        {/* Add your other routes here */}
-      </Routes>
+     
     </Router>
   </div>
    

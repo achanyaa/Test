@@ -1,10 +1,11 @@
 import React from 'react';
 import CodeDisplay from './CodeDisplay';
 import ButtonNormal from '../Button/buttonNormal';
+import { Routes, Route } from 'react-router-dom'
 
 const RightSideSection = () => {
 
-    const code = `
+  const code = `
     import React from 'react';
 
     const MyComponent = () => {
@@ -19,16 +20,19 @@ const RightSideSection = () => {
     export default MyComponent;
   `;
 
-    return (
-        <div>
+  return (
+    <div>
 
-            <h1>Hello, React</h1>
-            <p>This is a custom mui library component.</p>
-            <ButtonNormal />
-      
-      <CodeDisplay code={code} />
-        </div>
-    );
+
+
+      <Routes>
+        <Route path="/normalbutton" element={<ButtonNormal />} />
+
+      </Routes>
+    </div>
+  );
 };
+
+
 
 export default RightSideSection;

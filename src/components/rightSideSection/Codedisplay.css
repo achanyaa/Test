@@ -1,17 +1,31 @@
-/* CodeDisplay.css */
+/* Codedisplay.css */
+
 .code-display-container {
-  position: relative;
+  background-color: black; 
+  border-radius: 8px; 
+  padding: 16px; 
 }
 
 .ui-container {
-  /* Add styles for UI display */
+  
+}
+
+.toggle-code-button {
+ 
+  color: white;
 }
 
 .code-container {
-  position: absolute;
-  top: 100%; /* Position below the UI */
-  left: 0;
-  width: 100%;
-  background-color: #f8f8f8;
-  padding: 20px;
+  
+}
+
+
+.code-container pre {
+  overflow-x: auto; 
+}
+
+.code-container code {
+  
+  color: #a9b7c6; 
+  font-family: 'Courier New', Courier, monospace; 
 }
