@@ -29,7 +29,7 @@ const CodeDisplay = ({ jsxCode, cssCode }) => {
 
     const handleCopyMouseEnter = () => {
         setShowTooltip(true);
-    };
+    }; 
 
     const handleCopyMouseLeave = () => {
         setShowTooltip(false);
@@ -48,7 +48,7 @@ const CodeDisplay = ({ jsxCode, cssCode }) => {
                 >
                     {copySuccess ? <FaCopy /> : <FaRegCopy />}
                 </button>
-                {showTooltip && <div className="tooltip">Copy</div>}
+                {showTooltip && <div className="tooltip">{copySuccess ? 'Copied' : 'Copy'}</div>}
             </div>
             <div className="code-container">
                 <pre>

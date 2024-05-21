@@ -24,7 +24,7 @@ function App() {
         <div className='rightside-content'>
           <RightSideSection/>
         </div>
-      </div>
+      </div>  
      
     </Router>
   </div>
