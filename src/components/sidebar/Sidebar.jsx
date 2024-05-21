@@ -13,6 +13,11 @@ const Sidebar = ({ isOpen }) => {
     { label: "Contained Button", link: "/containedbutton" },
     { label: "Outlined Button", link: "/outlinedbutton" }
   ];
+  const textfielditems = [
+    { label: "Outlined", link: "/outlinedtextfield" },
+    { label: "Filled", link: "/filledtextfield" },
+    { label: "Standard", link: "/standardtextfield" }
+  ];
   
   return (
     <div className={`sidebar ${isOpen ? '' : 'closed'}`}>
@@ -27,6 +32,24 @@ const Sidebar = ({ isOpen }) => {
         <AccordionDetails>
           <ul style={{ listStyleType: 'none', padding: 0 }}>
             {items.map((item, index) => (
+              <li key={index}>
+                <Link to={item.link} style={{ textDecoration: 'none' }}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion sx={{ '&.MuiAccordion-root:before': { display: 'none' } }} >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          Text Field
+        </AccordionSummary>
+        <AccordionDetails>
+          <ul style={{ listStyleType: 'none', padding: 0 }}>
+            {textfielditems.map((item, index) => (
               <li key={index}>
                 <Link to={item.link} style={{ textDecoration: 'none' }}>{item.label}</Link>
               </li>
