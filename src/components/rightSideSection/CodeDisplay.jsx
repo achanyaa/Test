@@ -4,7 +4,6 @@ import './Codedisplay.css';
 
 const CodeDisplay = ({ jsxCode, cssCode }) => {
     const [activeTab, setActiveTab] = useState('jsx');
-    const [copySuccess, setCopySuccess] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
 
     const toggleTab = (tab) => {
@@ -14,25 +13,14 @@ const CodeDisplay = ({ jsxCode, cssCode }) => {
     const copyCodeToClipboard = (code) => {
         navigator.clipboard.writeText(code)
             .then(() => {
-                setCopySuccess(true);
+                setShowTooltip(true);
                 setTimeout(() => {
-                    setCopySuccess(false);
-                }, 3000); 
+                    setShowTooltip(false);
+                }, 3000);
             })
             .catch(error => {
                 console.error('Failed to copy:', error);
-                setCopySuccess(false);
             });
-    };
-   
-
-
-    const handleCopyMouseEnter = () => {
-        setShowTooltip(true);
-    };
-
-    const handleCopyMouseLeave = () => {
-        setShowTooltip(false);
     };
 
     return (
@@ -43,12 +31,11 @@ const CodeDisplay = ({ jsxCode, cssCode }) => {
                 <button
                     onClick={() => copyCodeToClipboard(activeTab === 'jsx' ? jsxCode : cssCode)}
                     className="copy-button"
-                    onMouseEnter={handleCopyMouseEnter}
-                    onMouseLeave={handleCopyMouseLeave}
+                    onMouseLeave={() => setShowTooltip(false)} // Hide tooltip when mouse leaves the button
                 >
-                    {copySuccess ? <FaCopy /> : <FaRegCopy />}
+                    {showTooltip ? <FaCopy /> : <FaRegCopy />}
                 </button>
-                {showTooltip && <div className="tooltip">Copy</div>}
+                {showTooltip && <div className="tooltipsuccess">Copied successfully</div>}
             </div>
             <div className="code-container">
                 <pre>

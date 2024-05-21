@@ -87,3 +87,12 @@
   visibility: visible;
   opacity: 1;
 }
+.tooltipsuccess {
+  visibility: visible;
+  height: 25px;
+  margin-top: 15px;
+  margin-left: 10px;
+  color: white;
+
+
+}
