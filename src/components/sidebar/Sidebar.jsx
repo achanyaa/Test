@@ -34,7 +34,7 @@ const Sidebar = ({ isOpen }) => {
           </ul>
         </AccordionDetails>
       </Accordion>
-
+      
 
     </div>
   );
