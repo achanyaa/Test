@@ -18,6 +18,17 @@ const ButtonContained = () => {
 export default ButtonContained;
 `;
 
+const cssCode = `
+.button-container {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-top: 0%;
+}
+
+
+`;
+
 function ButtonContained() {
     return (
 
@@ -26,7 +37,7 @@ function ButtonContained() {
             <div className="button-container">
                 <Button variant="contained">Button</Button>
             </div>
-            <CodeDisplay jsxCode={code}/>
+            <CodeDisplay jsxCode={code} cssCode={cssCode}/>
         </div>
 
 

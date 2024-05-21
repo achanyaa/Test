@@ -31,7 +31,7 @@ const CodeDisplay = ({ jsxCode, cssCode }) => {
                 <button
                     onClick={() => copyCodeToClipboard(activeTab === 'jsx' ? jsxCode : cssCode)}
                     className="copy-button"
-                    onMouseLeave={() => setShowTooltip(false)} // Hide tooltip when mouse leaves the button
+                    // onMouseLeave={() => setShowTooltip(false)} // Hide tooltip when mouse leaves the button
                 >
                     {showTooltip ? <FaCopy /> : <FaRegCopy />}
                 </button>
