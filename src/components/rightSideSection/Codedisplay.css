@@ -1,17 +1,89 @@
-/* CodeDisplay.css */
+/* Codedisplay.css */
+
 .code-display-container {
-  position: relative;
+  background-color: black; 
+  border-radius: 8px; 
+  padding: 16px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ui-container {
-  /* Add styles for UI display */
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 20px;
+}
+
+.toggle-code-button {
+  color: white;
+  background-color: #333; 
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-right: 20px;
+  border-radius: 8px; 
+}
+
+.toggle-code-button:hover {
+  background-color: #555; 
+}
+
+.toggle-code-button.active {
+  font-weight: bold; /* Apply bold font to active button */
+}
+
+.copy-button {
+  background-color: #333; /* Add background color */
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  margin-left: 20px; /* Increase margin to provide more spacing */
+  padding: 10px 20px; /* Add padding */
+  border-radius: 8px; /* Add border radius */
+}
+
+.copy-button:hover {
+  background-color: #555; /* Change background color on hover */
 }
 
 .code-container {
+  background-color: #1e1e1e; /* Dark background color */
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%; /* Expand container to full width */
+  overflow: auto; /* Add scrollbar if content overflows */
+}
+
+.code-container pre {
+  margin: 0; /* Remove default margin */
+}
+
+.code-container code {
+  color: #a9b7c6; 
+  font-family: 'Courier New', Courier, monospace; 
+}
+
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
   position: absolute;
-  top: 100%; /* Position below the UI */
-  left: 0;
-  width: 100%;
-  background-color: #f8f8f8;
-  padding: 20px;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.copy-button:hover + .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
